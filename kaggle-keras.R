@@ -50,6 +50,8 @@ model = keras_model_sequential() %>%
     layer_dense( 200 ,input_shape=230, activation='relu') %>%
     layer_dense( 100 , activation='softmax')
 
+# RMSprop(lr=0.001, rho=0.9, epsilon=1e-08, decay=0.0)
+
 model %>% compile(optimizer='rmsprop', loss='binary_crossentropy',metrics=c('accuracy'))
 
 history <- model %>% 
